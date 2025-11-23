@@ -19,9 +19,8 @@ class Settings(BaseSettings):
     DEBUG: bool = True
     LOG_LEVEL: str = "INFO"
     
-    # OpenAI API (IA) - Usando Gemini 2.5 Flash del sandbox
+    # OpenAI API (IA)
     OPENAI_API_KEY: str = ""  # Se tomará del entorno
-    OPENAI_BASE_URL: str = ""  # Se tomará del entorno
     
     # PostgreSQL Database
     DATABASE_URL: str
@@ -32,7 +31,7 @@ class Settings(BaseSettings):
     WHATCHIM_BASE_URL: str = "https://api.whatchim.com/v1"
     
     # Configuración de la IA
-    AI_MODEL: str = "gemini-2.5-flash"  # Modelo disponible en sandbox
+    AI_MODEL: str = "gpt-4o-mini"  # Modelo de OpenAI (económico y rápido)
     AI_TEMPERATURE: float = 0.7
     AI_MAX_TOKENS: int = 500
     
