@@ -84,6 +84,17 @@ async def health_check():
     }
 
 
+@app.get("/debug/env")
+async def debug_env():
+    """Debug endpoint para verificar variables de entorno"""
+    import os
+    return {
+        "DATABASE_URL": "SET" if os.getenv("DATABASE_URL") else "NOT SET",
+        "OPENAI_API_KEY": "SET" if os.getenv("OPENAI_API_KEY") else "NOT SET",
+        "PYTHONPATH": os.getenv("PYTHONPATH", "NOT SET")
+    }
+
+
 if __name__ == "__main__":
     import uvicorn
     
